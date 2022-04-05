@@ -1,5 +1,5 @@
-torch==1.6.0+cpu
-torchvision==0.7.0+cpu
+torch==1.6.0
+torchvision==0.7.0
 tqdm
 easyfsl
 absl-py==1.0.0
