@@ -7,6 +7,8 @@ def prep_img(img):
     import string
     import time
     import os
+    from io import BytesIO
+    import base64
     import math
     size=100
     hei=[]
