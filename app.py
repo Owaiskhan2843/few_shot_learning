@@ -30,8 +30,8 @@ def infer_image():
     img_bytes = file
     img = transform_image(img_bytes)
 
-#     return jsonify(prediction=prediction(img))
-    return prediction(img)
+    return jsonify(prediction=prediction(img))
+#     return prediction(img)
     
 
 @app.route('/', methods=['GET'])
