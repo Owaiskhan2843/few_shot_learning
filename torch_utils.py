@@ -81,14 +81,14 @@ convolutional_network.fc = nn.Flatten()
 # print(convolutional_network)
 
 model = PrototypicalNetworks(convolutional_network)
-model.load_state_dict(torch.load('5_shot_new.pth',map_location={'cuda:0': 'cpu'}))
+model.load_state_dict(torch.load('few_shot (1).pth',map_location={'cuda:0': 'cpu'}))
 
 N_TRAINING_EPISODES = 2000
 N_VALIDATION_TASKS = 100
 
 train_set.labels = [instance[1] for instance in train_set.imgs]
 train_sampler = TaskSampler(
-    train_set, n_way=2, n_shot=5, n_query=5, n_tasks=N_TRAINING_EPISODES
+    train_set, n_way=2, n_shot=8, n_query=2, n_tasks=N_TRAINING_EPISODES
 )
 train_loader = DataLoader(
     train_set,
@@ -136,4 +136,4 @@ def prediction(image_tensor):
     example_scores = model(  example_support_images,  example_support_labels,image_tensor).detach()
     _, example_predicted_labels = torch.max(example_scores.data, 1)
     # return example_predicted_labels
-    return "Normal" if example_predicted_labels[0]==1 else "Cataract"
+    return "Normal" if example_predicted_labels.numpy()[0]==1 else "Cataract"
