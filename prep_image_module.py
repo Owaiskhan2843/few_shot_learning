@@ -5,6 +5,8 @@ def prep_img(img):
     from PIL import Image
     import io
     import string
+    from io import BytesIO
+    import base64
     import time
     import os
     import math
