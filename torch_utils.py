@@ -93,7 +93,7 @@ train_sampler = TaskSampler(
 train_loader = DataLoader(
     train_set,
     batch_sampler=train_sampler,
-    num_workers=1,
+    num_workers=0,
     pin_memory=True,
     collate_fn=train_sampler.episodic_collate_fn,
 )
