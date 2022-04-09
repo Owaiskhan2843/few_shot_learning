@@ -81,7 +81,7 @@ convolutional_network.fc = nn.Flatten()
 # print(convolutional_network)
 
 model = PrototypicalNetworks(convolutional_network)
-model.load_state_dict(torch.load('few_shot (1).pth',map_location={'cuda:0': 'cpu'}))
+model.load_state_dict(torch.load('8_shot.pth',map_location={'cuda:0': 'cpu'}))
 
 N_TRAINING_EPISODES = 2000
 N_VALIDATION_TASKS = 100
